@@ -11,6 +11,7 @@ import UIKit
 class ViewControllerDetail: UIViewController {
 
     var city:City?
+    var weatherData:WeatherData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class ViewControllerDetail: UIViewController {
         if let unwrapCity = city {
             RequestApi.getByCity(city: unwrapCity, Success: { (Data) in
                 print(Data)
+                let decoder = JSONDecoder()
+                self.weatherData = try? decoder.decode(WeatherData.self, from: Data)
+                print(self.weatherData?.daily.data[0].time ?? "error")
             }) { (Error) in
                 print(Error)
             }

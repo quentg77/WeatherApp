@@ -20,6 +20,7 @@
 		F3B94360229527C90091ABF0 /* CitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9435F229527C90091ABF0 /* CitiesData.swift */; };
 		F3B94362229538110091ABF0 /* ViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B94361229538110091ABF0 /* ViewControllerDetail.swift */; };
 		F3B94364229554CF0091ABF0 /* RequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B94363229554CF0091ABF0 /* RequestApi.swift */; };
+		F3B9436622956D8D0091ABF0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9436522956D8D0091ABF0 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F3B9435F229527C90091ABF0 /* CitiesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesData.swift; sourceTree = "<group>"; };
 		F3B94361229538110091ABF0 /* ViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetail.swift; sourceTree = "<group>"; };
 		F3B94363229554CF0091ABF0 /* RequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestApi.swift; sourceTree = "<group>"; };
+		F3B9436522956D8D0091ABF0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		FDBB6378369E408414FC1810 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				F3B9433D229523990091ABF0 /* Info.plist */,
 				F3B9435F229527C90091ABF0 /* CitiesData.swift */,
 				F3B94363229554CF0091ABF0 /* RequestApi.swift */,
+				F3B9436522956D8D0091ABF0 /* WeatherData.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 			files = (
 				F3B94334229523980091ABF0 /* ViewControllerMap.swift in Sources */,
 				F3B94332229523980091ABF0 /* AppDelegate.swift in Sources */,
+				F3B9436622956D8D0091ABF0 /* WeatherData.swift in Sources */,
 				F3B94364229554CF0091ABF0 /* RequestApi.swift in Sources */,
 				F3B94360229527C90091ABF0 /* CitiesData.swift in Sources */,
 				F3B94362229538110091ABF0 /* ViewControllerDetail.swift in Sources */,
