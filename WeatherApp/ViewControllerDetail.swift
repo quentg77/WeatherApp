@@ -16,6 +16,14 @@ class ViewControllerDetail: UIViewController {
         super.viewDidLoad()
 
         print("\(city?.name ?? "no city") is passed")
+        
+        if let unwrapCity = city {
+            RequestApi.getByCity(city: unwrapCity, Success: { (Data) in
+                print(Data)
+            }) { (Error) in
+                print(Error)
+            }
+        }
     }
     
 
