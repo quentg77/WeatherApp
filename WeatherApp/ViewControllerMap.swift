@@ -9,16 +9,21 @@
 import UIKit
 import MapKit
 
-class ViewControllerMap: UIViewController, MKMapViewDelegate {
+class ViewControllerMap: UIViewController, MKMapViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mapViewRef:MKMapView!
+    @IBOutlet weak var tableView: UITableView!
     
     var citySelected:City?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.dataSource = self
+        
+        self.tableView.isHidden = true
         //mapView.delegate = self as? MKMapViewDelegate
+        //self.tableView.reloadData()
         
         for city in CitiesData.list {
             let pin = MKPointAnnotation()
@@ -26,6 +31,37 @@ class ViewControllerMap: UIViewController, MKMapViewDelegate {
             pin.title = city.name
             mapViewRef.addAnnotation(pin)
         }
+    }
+    
+    @IBAction func menuClicked(sender: UIBarButtonItem) {
+        if tableView.isHidden {
+            tableView.isHidden = false
+        }
+        else {
+            tableView.isHidden = true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("cell clicked")
+    }
+    
+    @IBAction func itemSelected(sender: UITableViewCell) {
+        citySelected = CitiesData.list[tableView.indexPathForSelectedRow?.row ?? 0]
+        print(citySelected?.name ?? "error")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CitiesData.list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CitiesCellIdentifier", for: indexPath) as? CitiesCell {
+            let city = CitiesData.list[indexPath.row]
+            cell.configure(withCitiesName: city.name)
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

@@ -19,30 +19,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i4x-5R-z15">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zTO-76-SAz"/>
                                 </connections>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nls-hx-hIy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitiesCellIdentifier" rowHeight="69" id="YhY-C7-8JO" customClass="CitiesCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YhY-C7-8JO" id="8pf-Uy-XXl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5C-FZ-g8O">
+                                                    <rect key="frame" x="23" y="19" width="329" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="k5C-FZ-g8O" firstAttribute="top" secondItem="8pf-Uy-XXl" secondAttribute="topMargin" constant="8" id="0YW-Zo-SeN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="k5C-FZ-g8O" secondAttribute="trailing" constant="8" id="dRp-e8-m4b"/>
+                                                <constraint firstItem="k5C-FZ-g8O" firstAttribute="leading" secondItem="8pf-Uy-XXl" secondAttribute="leadingMargin" constant="8" id="iOY-U9-pp1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="k5C-FZ-g8O" secondAttribute="bottom" constant="8" id="raf-4K-vK4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="k5C-FZ-g8O" id="tNF-Kg-1US"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1ql-IO-2LX"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i4x-5R-z15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0L5-sc-1ui"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nls-hx-hIy" secondAttribute="trailing" id="7s7-7T-a2v"/>
+                            <constraint firstItem="Nls-hx-hIy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I5v-0D-yVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nls-hx-hIy" secondAttribute="bottom" id="Omd-tf-KUp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i4x-5R-z15" secondAttribute="bottom" id="Tnf-yU-80P"/>
-                            <constraint firstItem="i4x-5R-z15" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sGg-dt-fGf"/>
+                            <constraint firstItem="Nls-hx-hIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZFD-gV-WE6"/>
+                            <constraint firstItem="i4x-5R-z15" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sGg-dt-fGf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i4x-5R-z15" secondAttribute="trailing" id="tmD-n5-zge"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yIL-jh-O5S"/>
+                    <navigationItem key="navigationItem" id="yIL-jh-O5S">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu" landscapeImage="menu" id="qle-W3-2lD">
+                            <inset key="imageInsets" minX="600" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="largeContentSizeImageInsets" minX="1" minY="-1" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <action selector="menuClickedWithSender:" destination="BYZ-38-t0r" id="Gac-A8-3GL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapViewRef" destination="i4x-5R-z15" id="vQX-q0-TNW"/>
+                        <outlet property="tableView" destination="Nls-hx-hIy" id="OX6-2V-XnR"/>
                         <segue destination="LGW-3S-gM2" kind="show" identifier="toDetailPage" id="0hS-xn-25D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="121"/>
+            <point key="canvasLocation" x="373.60000000000002" y="120.98950524737631"/>
         </scene>
         <!--View Controller Detail-->
         <scene sceneID="tdo-Bf-D7o">
@@ -346,4 +393,7 @@
             <point key="canvasLocation" x="-449" y="121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="512" height="512"/>
+    </resources>
 </document>

@@ -14,6 +14,7 @@
 		F3388BF02296807A00C545F3 /* HourlyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3388BEF2296807A00C545F3 /* HourlyForecastCell.swift */; };
 		F3388BF22296990600C545F3 /* DailyForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3388BF12296990600C545F3 /* DailyForecastCell.swift */; };
 		F3388BF42296BC6F00C545F3 /* ExtraInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3388BF32296BC6F00C545F3 /* ExtraInfoCell.swift */; };
+		F3388BF62296D8D100C545F3 /* CitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3388BF52296D8D100C545F3 /* CitiesCell.swift */; };
 		F3B94332229523980091ABF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B94331229523980091ABF0 /* AppDelegate.swift */; };
 		F3B94334229523980091ABF0 /* ViewControllerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B94333229523980091ABF0 /* ViewControllerMap.swift */; };
 		F3B94337229523980091ABF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3B94335229523980091ABF0 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		F3388BEF2296807A00C545F3 /* HourlyForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCell.swift; sourceTree = "<group>"; };
 		F3388BF12296990600C545F3 /* DailyForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCell.swift; sourceTree = "<group>"; };
 		F3388BF32296BC6F00C545F3 /* ExtraInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraInfoCell.swift; sourceTree = "<group>"; };
+		F3388BF52296D8D100C545F3 /* CitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesCell.swift; sourceTree = "<group>"; };
 		F3B9432E229523980091ABF0 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B94331229523980091ABF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3B94333229523980091ABF0 /* ViewControllerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMap.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				F3388BEF2296807A00C545F3 /* HourlyForecastCell.swift */,
 				F3388BF12296990600C545F3 /* DailyForecastCell.swift */,
 				F3388BF32296BC6F00C545F3 /* ExtraInfoCell.swift */,
+				F3388BF52296D8D100C545F3 /* CitiesCell.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				F3B94364229554CF0091ABF0 /* RequestApi.swift in Sources */,
 				F3B94360229527C90091ABF0 /* CitiesData.swift in Sources */,
 				F3388BF42296BC6F00C545F3 /* ExtraInfoCell.swift in Sources */,
+				F3388BF62296D8D100C545F3 /* CitiesCell.swift in Sources */,
 				F3388BEE22967A4900C545F3 /* ForecastTextCell.swift in Sources */,
 				F3B94362229538110091ABF0 /* ViewControllerDetail.swift in Sources */,
 				F3B9436A229584240091ABF0 /* HeaderCell.swift in Sources */,
