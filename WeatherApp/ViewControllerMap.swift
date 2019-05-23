@@ -38,7 +38,7 @@ class ViewControllerMap: UIViewController, MKMapViewDelegate {
             }
         }
         
-        self.performSegue(withIdentifier: "segue", sender: nil)
+        self.performSegue(withIdentifier: "toDetailPage", sender: nil)
         
         //let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         //let nextViewController = storyboard.instantiateViewController(withIdentifier: "ViewControllerDetail") as! ViewControllerDetail
