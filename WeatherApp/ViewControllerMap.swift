@@ -34,12 +34,7 @@ class ViewControllerMap: UIViewController, MKMapViewDelegate, UITableViewDataSou
     }
     
     @IBAction func menuClicked(sender: UIBarButtonItem) {
-        if tableView.isHidden {
-            tableView.isHidden = false
-        }
-        else {
-            tableView.isHidden = true
-        }
+        tableView.isHidden.toggle()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

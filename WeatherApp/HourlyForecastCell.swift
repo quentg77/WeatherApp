@@ -15,9 +15,10 @@ class HourlyForecastCell: UITableViewCell {
     @IBOutlet weak var humidityLabel:UILabel!
     @IBOutlet weak var temperatureLabel:UILabel!
     
-    func configure(withHourlyData hourlyData:Hourly.Data) {
+    func configure(withHourlyData hourlyData:Hourly.Data, withTimeZone timezone:String) {
         let date = Date(timeIntervalSince1970: TimeInterval(hourlyData.time))
         let dateFormater = DateFormatter()
+        dateFormater.timeZone = TimeZone(identifier: timezone)
         dateFormater.dateFormat = "HH"
         let strDate = dateFormater.string(from: date)
         

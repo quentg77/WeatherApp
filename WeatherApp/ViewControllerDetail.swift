@@ -33,7 +33,7 @@ class ViewControllerDetail: UIViewController, UITableViewDataSource {
                 self.extraInfosTable = [
                     [
                         ExtraInfo(value: Int((self.weatherData?.currently.humidity ?? 0) * 100), unity: .humidity),
-                        ExtraInfo(value: Int((self.weatherData?.currently.windSpeed ?? 0)), unity: .windSpeed)
+                        ExtraInfo(value: Int((self.weatherData?.currently.windSpeed ?? 0) * 3.6), unity: .windSpeed)
                     ],
                     [
                         ExtraInfo(value: Int((self.weatherData?.currently.pressure ?? 0)), unity: .atmoPressure),
@@ -94,8 +94,8 @@ class ViewControllerDetail: UIViewController, UITableViewDataSource {
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyForecastCellIdentifier", for: indexPath) as? HourlyForecastCell {
-                if let data = weatherData?.hourly.data[indexPath.row] {
-                    cell.configure(withHourlyData: data)
+                if let data = weatherData?.hourly.data[indexPath.row], let timezone = weatherData?.timezone {
+                    cell.configure(withHourlyData: data, withTimeZone: timezone)
                     //print("cell configure call")
                     return cell
                 }
