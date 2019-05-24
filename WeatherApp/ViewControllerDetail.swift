@@ -60,7 +60,10 @@ class ViewControllerDetail: UIViewController, UITableViewDataSource {
         case 1:
             return 1
         case 2:
-            return weatherData?.hourly.data.count ?? 0
+            if weatherData?.hourly.data.count ?? 0 <= 24 {
+                return weatherData?.hourly.data.count ?? 0
+            }
+            return 24
         case 3:
             return 1
         case 4:
