@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewControllerMap: UIViewController, MKMapViewDelegate, UITableViewDataSource {
+class ViewControllerMap: UIViewController, MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var mapViewRef:MKMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -42,13 +42,13 @@ class ViewControllerMap: UIViewController, MKMapViewDelegate, UITableViewDataSou
         }
     }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print("cell clicked")
-    }
-    
-    @IBAction func itemSelected(sender: UITableViewCell) {
-        citySelected = CitiesData.list[tableView.indexPathForSelectedRow?.row ?? 0]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        citySelected = CitiesData.list[indexPath.row]
         print(citySelected?.name ?? "error")
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.isHidden = true
+        
+        self.performSegue(withIdentifier: "toDetailPage", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
