@@ -16,10 +16,10 @@ class ViewControllerDetail: UIViewController, UITableViewDataSource {
     var weatherData:WeatherData?
     var extraInfosTable:[[ExtraInfo]]?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.isHidden = true
 
         print("\(city?.name ?? "no city") is passed")
         
@@ -41,6 +41,7 @@ class ViewControllerDetail: UIViewController, UITableViewDataSource {
                     ]
                 ]
                 
+                self.tableView.isHidden = false
                 self.tableView.reloadData()
             }) { (Error) in
                 print(Error)

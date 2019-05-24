@@ -40,9 +40,9 @@ class ExtraInfoCell: UITableViewCell {
         case .humidity:
             valueLabel.text = String(extraInfo.value) + "%"
         case .atmoPressure:
-            valueLabel.text = String(extraInfo.value) + "hPa"
+            valueLabel.text = String(extraInfo.value) + " hPa"
         case .windSpeed:
-            valueLabel.text = String(extraInfo.value) + "km/h"
+            valueLabel.text = String(extraInfo.value) + " km/h"
         case .uvIndex:
             valueLabel.text = String(extraInfo.value)
         }
